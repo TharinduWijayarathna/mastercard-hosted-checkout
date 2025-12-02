@@ -1,0 +1,394 @@
+/* Mastercard Gateway Checkout Styles */
+
+:root {
+    --primary-color: #eb001b;
+    --secondary-color: #f79e1b;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --warning-color: #ffc107;
+    --text-dark: #212529;
+    --text-light: #6c757d;
+    --border-color: #dee2e6;
+    --bg-light: #f8f9fa;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.header h1 {
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.header p {
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.logo-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+}
+
+.logo-mc-red {
+    background-color: var(--primary-color);
+}
+
+.logo-mc-orange {
+    background-color: var(--secondary-color);
+    margin-left: -15px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(235, 0, 27, 0.1);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+    background-color: var(--text-light);
+    color: white;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background-color: #5a6268;
+}
+
+.btn-success {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.btn-block {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.button-group .btn {
+    flex: 1;
+}
+
+#embed-target {
+    margin-top: 30px;
+    min-height: 400px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 20px;
+    background-color: white;
+}
+
+.alert {
+    padding: 15px 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    color: #856404;
+}
+
+.alert-info {
+    background-color: #d1ecf1;
+    border: 1px solid #bee5eb;
+    color: #0c5460;
+}
+
+.spinner {
+    border: 3px solid var(--border-color);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.loading-content {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.receipt {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+}
+
+.receipt-header {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 30px;
+}
+
+.receipt-status {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+.receipt-status.success {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.receipt-status.failed {
+    background-color: var(--error-color);
+    color: white;
+}
+
+.receipt-details {
+    margin: 30px 0;
+}
+
+.receipt-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.receipt-row:last-child {
+    border-bottom: none;
+}
+
+.receipt-label {
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.receipt-value {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.receipt-total {
+    background-color: var(--bg-light);
+    padding: 15px;
+    border-radius: 4px;
+    margin: 20px 0;
+}
+
+.receipt-total .receipt-row {
+    border-bottom: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card-info {
+    background-color: var(--bg-light);
+    padding: 15px;
+    border-radius: 4px;
+    margin: 20px 0;
+}
+
+.transaction-list {
+    margin-top: 30px;
+}
+
+.transaction-item {
+    background-color: var(--bg-light);
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.transaction-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.transaction-type {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.transaction-time {
+    color: var(--text-light);
+    font-size: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 20px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+    
+    .receipt {
+        padding: 20px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: white;
+    }
+    
+    .container {
+        box-shadow: none;
+    }
+    
+    .btn {
+        display: none;
+    }
+}
