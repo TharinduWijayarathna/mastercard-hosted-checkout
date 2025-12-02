@@ -2,7 +2,7 @@
 
 Simple PHP and JavaScript implementation for Bank of Ceylon Mastercard Payment Gateway.
 
-## ⚡ Quick Start
+## Quick Start
 
 ### 1. Configure Credentials
 
@@ -36,30 +36,35 @@ http://localhost:8000/checkout.php?demo=1
 
 ---
 
-## 📋 Prerequisites
+## Prerequisites
 
-- PHP 7.4+ with cURL
+- PHP 7.4+ with cURL extension
 - Merchant account with Bank of Ceylon
 - API credentials (Merchant ID & Password)
 
-## 🎯 Features
+## Features
 
-- ✅ **Embedded Page** - Payment form in your website
-- ✅ **Payment Page** - Redirect to gateway page
-- ✅ **LKR Currency** - Sri Lankan Rupee support
-- ✅ **PURCHASE** - Direct payment processing
-- ✅ **VERIFY** - Card verification
-- ✅ **Receipt** - Professional payment receipts
-- ✅ **Responsive** - Mobile-optimized design
+- **Embedded Page** - Payment form integrated in your website
+- **Payment Page** - Redirect to gateway-hosted page
+- **LKR Currency** - Sri Lankan Rupee support
+- **PURCHASE** - Direct payment processing
+- **VERIFY** - Card verification
+- **Receipt** - Professional payment receipts
+- **Responsive** - Mobile-optimized design
 
-## ⚠️ Important Limitations
+## Important Limitations
 
-This merchant account supports:
-- ✅ **Currency:** LKR only
-- ✅ **Operations:** PURCHASE, VERIFY
-- ❌ **Not Supported:** AUTHORIZE, CAPTURE, USD/EUR/GBP
+This merchant account configuration supports:
 
-## 📁 Project Structure
+**Supported:**
+- Currency: LKR only
+- Operations: PURCHASE, VERIFY
+
+**Not Supported:**
+- AUTHORIZE, CAPTURE operations
+- USD, EUR, GBP currencies
+
+## Project Structure
 
 ```
 ipg/
@@ -78,7 +83,7 @@ ipg/
     └── js/checkout-handler.js
 ```
 
-## 🔧 Configuration
+## Configuration
 
 | Variable | Required | Default |
 |----------|----------|---------|
@@ -87,7 +92,7 @@ ipg/
 | `MERCHANT_NAME` | No | My Store |
 | `GATEWAY_ENVIRONMENT` | No | test |
 
-## 💳 Testing
+## Testing
 
 ### Test Cards
 
@@ -105,42 +110,45 @@ ipg/
 4. Complete payment
 5. View receipt
 
-## 🔒 Security
+## Security
 
-- ✅ `.env` file in `.gitignore`
-- ✅ HTTPS required for production
-- ✅ Server-side validation
-- ✅ Basic authentication
-- ✅ Logging in test mode only
+- `.env` file excluded via `.gitignore`
+- HTTPS required for production deployment
+- Server-side input validation
+- Basic authentication for API requests
+- Logging enabled in test mode only
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 **Connection Error:**
-- Check internet connection
-- Verify gateway URL
+- Verify internet connection
+- Check gateway URL configuration
 
 **Authentication Failed:**
-- Verify `MERCHANT_ID` and `API_PASSWORD` in `.env`
+- Verify `MERCHANT_ID` and `API_PASSWORD` in `.env` file
+- Ensure credentials match merchant account
 
 **Currency Error:**
-- Use LKR only (USD/EUR not supported)
+- Use LKR currency only
+- USD/EUR/GBP not supported for this merchant
 
 **Operation Error:**
-- Use PURCHASE (AUTHORIZE not enabled)
+- Use PURCHASE operation
+- AUTHORIZE not enabled for this merchant account
 
-## 📚 Documentation
+## Documentation
 
 - [Implementation Summary](IMPLEMENTATION_SUMMARY.md)
 - [Merchant Limitations](MERCHANT_LIMITATIONS.md)
-- [Official Gateway Docs](https://test-bankofceylon.mtf.gateway.mastercard.com/api/documentation/)
+- [Official Gateway Documentation](https://test-bankofceylon.mtf.gateway.mastercard.com/api/documentation/)
 
-## 📞 Support
+## Support
 
 Contact your payment service provider (Bank of Ceylon) for:
 - Enabling additional operations (AUTHORIZE/CAPTURE)
-- Adding more currencies
-- Production credentials
+- Adding support for additional currencies
+- Production credentials and deployment
 
 ---
 
-**⚠️ Note:** This is configured for Bank of Ceylon test environment. Always test thoroughly before production deployment.
+**Note:** This implementation is configured for Bank of Ceylon test environment. Conduct thorough testing before production deployment.
